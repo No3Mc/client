@@ -1,4 +1,44 @@
 {
-    "welcome": "Welcome to our website!",
-    "language": "Language"
+    "form": {
+        "personalInfo": "Please enter your personal or company name and phone number.",
+        "namePlaceholder": "Your name or company name",
+        "contactPlaceholder": "Enter contact number",
+        "levelsQuestion": "How many levels of chicken cages are in one row of your shed?",
+        "rowDimensions": "What is the length and width of each row?",
+        "lengthPlaceholder": "Length (meters)",
+        "widthPlaceholder": "Width (meters)",
+        "totalChickens": "How many chickens do you have in total?",
+        "chickensPlaceholder": "Enter number of chickens",
+        "salaries": "How much do you pay for salaries every month?",
+        "salaryPlaceholder": "Total salary paid per month (PKR)",
+        "shedType": "What type of chicken shed do you own?",
+        "semiControlled": "Semi Controlled with cages",
+        "batterySheds": "Battery Sheds",
+        "floor": "Floor",
+        "cageType": "What type of cages do you use?",
+        "karachiCages": "Karachi Cages",
+        "faisalabadCages": "Faisalabad Cages",
+        "submit": "Submit and calculate"
+    },
+    "help": {
+        "title": "Help for",
+        "exit": "Exit help"
+    },
+    "calculating": {
+        "title": "Calculating",
+        "message": "Please wait"
+    },
+    "results": {
+        "title": "Results",
+        "currency": "Currency: PKR",
+        "feedMachinePrice": "Buying Price of the feed Machine (Estimated)",
+        "roi": "Return on Investment (ROI)",
+        "dispenseTime": "Time to dispense feed",
+        "projectCompletionTime": "Time to Complete the Project",
+        "maintenance": "Maintenance Changes Per Month (Estimated)",
+        "monthlyLoss": "How much money you lose every month",
+        "feedWasted": "How much feed is wasted each month",
+        "electricityUsage": "How many electricity units are used per hour",
+        "calculateAgain": "Calculate again"
+    }
 }
