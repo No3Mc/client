@@ -34,11 +34,14 @@
         "feedMachinePrice": "السعر التقديري لآلة التغذية",
         "roi": "العائد على الاستثمار (ROI)",
         "dispenseTime": "وقت توزيع العلف",
-        "projectCompletionTime": "وقت إكمال المشروع",
-        "maintenance": "تكاليف الصيانة الشهرية (تقديريًا)",
-        "monthlyLoss": "كم تخسر من المال شهريًا",
+        "projectCompletionTime": "مدة إتمام المشروع",
+        "maintenance": "التكاليف التقديرية للصيانة الشهرية",
+        "monthlyLoss": "كم من المال تخسر كل شهر",
         "feedWasted": "كمية العلف المهدرة شهريًا",
-        "electricityUsage": "عدد وحدات الكهرباء المستخدمة في الساعة",
-        "calculateAgain": "حساب مرة أخرى"
-    }
+        "electricityUsage": "وحدات الكهرباء المستخدمة في الساعة",
+        "calculateAgain": "احسب مرة أخرى",
+        "months": "أشهر",
+        "hour": "ساعة",
+        "minutes": "دقائق"
+    }    
 }

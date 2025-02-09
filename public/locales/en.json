@@ -31,14 +31,17 @@
     "results": {
         "title": "Results",
         "currency": "Currency: PKR",
-        "feedMachinePrice": "Buying Price of the feed Machine (Estimated)",
+        "feedMachinePrice": "Estimated Price of Feed Machine",
         "roi": "Return on Investment (ROI)",
-        "dispenseTime": "Time to dispense feed",
+        "dispenseTime": "Time to Dispense Feed",
         "projectCompletionTime": "Time to Complete the Project",
-        "maintenance": "Maintenance Changes Per Month (Estimated)",
-        "monthlyLoss": "How much money you lose every month",
-        "feedWasted": "How much feed is wasted each month",
-        "electricityUsage": "How many electricity units are used per hour",
-        "calculateAgain": "Calculate again"
+        "maintenance": "Estimated Monthly Maintenance Costs",
+        "monthlyLoss": "How Much Money You Lose Every Month",
+        "feedWasted": "How Much Feed is Wasted Each Month",
+        "electricityUsage": "Electricity Units Used Per Hour",
+        "calculateAgain": "Calculate Again",
+        "months": "months",
+        "hour": "hour",
+        "minutes": "minutes"
     }
 }

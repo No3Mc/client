@@ -39,6 +39,9 @@
         "monthlyLoss": "آپ ہر ماہ کتنی رقم کھو رہے ہیں",
         "feedWasted": "ہر ماہ کتنا فیڈ ضائع ہوتا ہے",
         "electricityUsage": "فی گھنٹہ کتنے بجلی یونٹس استعمال ہوتے ہیں",
-        "calculateAgain": "دوبارہ حساب لگائیں"
+        "calculateAgain": "دوبارہ حساب لگائیں",
+        "months": "ماہ",
+        "hour": "گھنٹہ",
+        "minutes": "منٹ"
     }
 }
