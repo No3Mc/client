@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 
 const SUPPORTED_LOCALES = ['en', 'ur', 'ar'];
 
-const LanguageSelector = () => {
+function LanguageSelector() {
     const pathname = usePathname(); // Get the current path
     const searchParams = useSearchParams(); // Get current search parameters
     const router = useRouter(); // Router for navigation

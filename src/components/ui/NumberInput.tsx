@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface NumberInputProps {
     id: string; // Unique ID for the input field
     title: string; // Label for the input field
+    placeholder?: string;
     language: string;
     value?: number; // Optional initial value
     onChange?: (value: number) => void; // Callback to get the updated value
@@ -14,17 +16,7 @@ interface NumberInputProps {
     required?: boolean;
 }
 
-const NumberInput: React.FC<NumberInputProps> = ({
-    id,
-    title,
-    language,
-    value = 0,
-    onChange,
-    min = 0,
-    max = Infinity,
-    step = 1,
-    required = false
-}) => {
+function NumberInput({ id, title, language, placeholder, value = 0, onChange, min = 0, max = Infinity, step = 1, required = false }: NumberInputProps) {
     const [internalValue, setInternalValue] = useState(value);
 
     const handleIncrement = () => {
@@ -46,7 +38,7 @@ const NumberInput: React.FC<NumberInputProps> = ({
     };
 
     return (
-        <span className='flex flex-col gap-[5px]'>
+        <span className='flex flex-col gap-[3px]'>
             <label htmlFor={id} className={language === 'ar' || language === 'ur' ? 'text-right' : ''}>{title}</label>
             <div className="flex items-center border-[1px] border-black rounded-[10px] overflow-hidden">
                 {/* Input Field */}
@@ -54,8 +46,9 @@ const NumberInput: React.FC<NumberInputProps> = ({
                     type="number"
                     value={internalValue}
                     onChange={handleChange}
-                    className="w-full px-4 outline-none text-black"
+                    className={twMerge(language === 'ar' || language === 'ur' ? 'text-right' : '', "w-full px-4 outline-none text-black")}
                     required={required}
+                    placeholder={placeholder}
                 />
 
                 {/* Decrement Button */}

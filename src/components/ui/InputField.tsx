@@ -11,7 +11,7 @@ interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 function InputField({ id, title, placeholder, language, ...props }: InputFieldProps) {
     return (
-        <span className='flex flex-col gap-[5px]'>
+        <span className='flex flex-col gap-[3px]'>
             <label htmlFor={id} className={language === 'ar' || language === 'ur' ? 'text-right' : ''}>{title}</label>
             <input id={id} className={twMerge(language === 'ar' || language === 'ur' ? 'text-right' : '', 'border-[1px] border-black rounded-[10px] py-2 px-4')} placeholder={placeholder} {...props} />
         </span>
