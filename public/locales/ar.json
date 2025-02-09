@@ -1,44 +1,44 @@
 {
-  "form": {
-    "personalInfo": "يرجى إدخال اسمك الشخصي أو اسم شركتك ورقم الهاتف.",
-    "namePlaceholder": "اسمك أو اسم الشركة",
-    "contactPlaceholder": "أدخل رقم الاتصال",
-    "levelsQuestion": "كم عدد مستويات أقفاص الدجاج في صف واحد من الحظيرة؟",
-    "rowDimensions": "ما هو طول وعرض كل صف؟",
-    "lengthPlaceholder": "الطول (متر)",
-    "widthPlaceholder": "العرض (متر)",
-    "totalChickens": "كم عدد الدجاج لديك إجمالاً؟",
-    "chickensPlaceholder": "أدخل عدد الدجاج",
-    "salaries": "كم تدفع كرواتب شهريًا؟",
-    "salaryPlaceholder": "إجمالي الراتب الشهري (PKR)",
-    "shedType": "ما نوع حظيرة الدجاج التي تمتلكها؟",
-    "semiControlled": "نصف متحكم به مع الأقفاص",
-    "batterySheds": "حظائر البطاريات",
-    "floor": "الأرضية",
-    "cageType": "ما نوع الأقفاص التي تستخدمها؟",
-    "karachiCages": "أقفاص كراتشي",
-    "faisalabadCages": "أقفاص فيصل آباد",
-    "submit": "إرسال وحساب"
-  },
-  "help": {
-    "title": "المساعدة لـ",
-    "exit": "الخروج من المساعدة"
-  },
-  "calculating": {
-    "title": "جاري الحساب",
-    "message": "يرجى الانتظار"
-  },
-  "results": {
-    "title": "النتائج",
-    "currency": "العملة: PKR",
-    "feedMachinePrice": "السعر التقديري لآلة التغذية",
-    "roi": "العائد على الاستثمار (ROI)",
-    "dispenseTime": "وقت توزيع العلف",
-    "projectCompletionTime": "وقت إكمال المشروع",
-    "maintenance": "تكاليف الصيانة الشهرية (تقديريًا)",
-    "monthlyLoss": "كم تخسر من المال شهريًا",
-    "feedWasted": "كمية العلف المهدرة شهريًا",
-    "electricityUsage": "عدد وحدات الكهرباء المستخدمة في الساعة",
-    "calculateAgain": "حساب مرة أخرى"
-  }
+    "form": {
+        "personalInfo": "يرجى إدخال اسمك الشخصي أو اسم شركتك ورقم الهاتف.",
+        "namePlaceholder": "اسمك أو اسم الشركة",
+        "contactPlaceholder": "أدخل رقم الاتصال",
+        "levelsQuestion": "كم عدد مستويات أقفاص الدجاج في صف واحد من الحظيرة؟",
+        "rowDimensions": "ما هو طول وعرض كل صف؟",
+        "lengthPlaceholder": "الطول (متر)",
+        "widthPlaceholder": "العرض (متر)",
+        "totalChickens": "كم عدد الدجاج لديك إجمالاً؟",
+        "chickensPlaceholder": "أدخل عدد الدجاج",
+        "salaries": "كم تدفع كرواتب شهريًا؟",
+        "salaryPlaceholder": "إجمالي الراتب الشهري (PKR)",
+        "shedType": "ما نوع حظيرة الدجاج التي تمتلكها؟",
+        "semiControlled": "نصف متحكم به مع الأقفاص",
+        "batterySheds": "حظائر البطاريات",
+        "floor": "الأرضية",
+        "cageType": "ما نوع الأقفاص التي تستخدمها؟",
+        "karachiCages": "أقفاص كراتشي",
+        "faisalabadCages": "أقفاص فيصل آباد",
+        "submit": "إرسال وحساب"
+    },
+    "help": {
+        "title": "المساعدة لـ",
+        "exit": "الخروج من المساعدة"
+    },
+    "calculating": {
+        "title": "جاري الحساب",
+        "message": "يرجى الانتظار"
+    },
+    "results": {
+        "title": "النتائج",
+        "currency": "العملة: PKR",
+        "feedMachinePrice": "السعر التقديري لآلة التغذية",
+        "roi": "العائد على الاستثمار (ROI)",
+        "dispenseTime": "وقت توزيع العلف",
+        "projectCompletionTime": "وقت إكمال المشروع",
+        "maintenance": "تكاليف الصيانة الشهرية (تقديريًا)",
+        "monthlyLoss": "كم تخسر من المال شهريًا",
+        "feedWasted": "كمية العلف المهدرة شهريًا",
+        "electricityUsage": "عدد وحدات الكهرباء المستخدمة في الساعة",
+        "calculateAgain": "حساب مرة أخرى"
+    }
 }
