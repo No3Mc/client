@@ -1,4 +1,46 @@
 {
-    "welcome": "Welcome to our website! ur",
-    "language": "Language ur"
+  "welcome": "ہماری ویب سائٹ پر خوش آمدید!",
+  "language": "زبان",
+  "form": {
+    "personalInfo": "براہ کرم اپنا ذاتی یا کمپنی کا نام اور فون نمبر درج کریں۔",
+    "namePlaceholder": "آپ کا نام یا کمپنی کا نام",
+    "contactPlaceholder": "رابطہ نمبر درج کریں",
+    "levelsQuestion": "آپ کے شیڈ کی ایک قطار میں کتنی سطحوں کے چکن کیج ہیں؟",
+    "rowDimensions": "ہر قطار کی لمبائی اور چوڑائی کیا ہے؟",
+    "lengthPlaceholder": "لمبائی (میٹر)",
+    "widthPlaceholder": "چوڑائی (میٹر)",
+    "totalChickens": "کل کتنے مرغیاں ہیں؟",
+    "chickensPlaceholder": "مرغیوں کی تعداد درج کریں",
+    "salaries": "آپ ہر ماہ تنخواہوں پر کتنا خرچ کرتے ہیں؟",
+    "salaryPlaceholder": "کل تنخواہ (PKR) درج کریں",
+    "shedType": "آپ کے پاس کس قسم کا چکن شیڈ ہے؟",
+    "semiControlled": "نیم کنٹرولڈ کیجز کے ساتھ",
+    "batterySheds": "بیٹری شیڈز",
+    "floor": "فرش",
+    "cageType": "آپ کس قسم کے کیجز استعمال کرتے ہیں؟",
+    "karachiCages": "کراچی کیجز",
+    "faisalabadCages": "فیصل آباد کیجز",
+    "submit": "جمع کروائیں اور حساب لگائیں"
+  },
+  "help": {
+    "title": "مدد برائے",
+    "exit": "مدد سے باہر نکلیں"
+  },
+  "calculating": {
+    "title": "حساب لگایا جا رہا ہے",
+    "message": "برائے مہربانی انتظار کریں"
+  },
+  "results": {
+    "title": "نتائج",
+    "currency": "کرنسی: PKR",
+    "feedMachinePrice": "فیڈ مشین کی تخمینی قیمت",
+    "roi": "سرمایہ کاری پر واپسی (ROI)",
+    "dispenseTime": "فیڈ تقسیم کرنے کا وقت",
+    "projectCompletionTime": "منصوبے کی تکمیل کا وقت",
+    "maintenance": "ماہانہ تخمینی مرمت کے اخراجات",
+    "monthlyLoss": "آپ ہر ماہ کتنی رقم کھو رہے ہیں",
+    "feedWasted": "ہر ماہ کتنا فیڈ ضائع ہوتا ہے",
+    "electricityUsage": "فی گھنٹہ کتنے بجلی یونٹس استعمال ہوتے ہیں",
+    "calculateAgain": "دوبارہ حساب لگائیں"
+  }
 }
