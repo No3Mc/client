@@ -1,11 +1,33 @@
-import { useTranslations } from 'next-intl';
+
+import FormHandler from '@/components/FormHandler';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function HomePage() {
   const t = useTranslations();
+  const language = useLocale();
+
+  const formProps = {
+    personalInfo: t('form.personalInfo'),
+    namePlaceholder: t('form.namePlaceholder'),
+    contactPlaceholder: t('form.contactPlaceholder'),
+    levelsQuestion: t('form.levelsQuestion'),
+    rowDimensions: t('form.rowDimensions'),
+    lengthPlaceholder: t('form.lengthPlaceholder'),
+    widthPlaceholder: t('form.widthPlaceholder'),
+    totalChickens: t('form.totalChickens'),
+    chickensPlaceholder: t('form.chickensPlaceholder'),
+    salaries: t('form.salaries'),
+    salaryPlaceholder: t('form.salaryPlaceholder'),
+    shedType: t('form.shedType'),
+    semiControlled: t('form.semiControlled'),
+    batterySheds: t('form.batterySheds'),
+    floor: t('form.floor'),
+    cageType: t('form.cageType'),
+    karachiCages: t('form.karachiCages'),
+    faisalabadCages: t('form.faisalabadCages'),
+  };
 
   return (
-    <div className='p-5'>
-      <h1>{t('welcome')}</h1>
-    </div>
+    <FormHandler form={formProps} language={language} submit={t('form.submit')} />
   );
 }
