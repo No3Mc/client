@@ -6,6 +6,7 @@ import { FormData } from '@/types/form';
 import InputField from './ui/InputField';
 import NumberInput from './ui/NumberInput';
 import ButtonGroup from './ui/ButtonGroup';
+import { redirect } from 'next/navigation';
 
 function FormHandler({ form, submit, language }: { form: FormData, submit: string, language: string }) {
     const [name, setName] = React.useState<string>('');
@@ -17,6 +18,22 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
     const [salary, setSalary] = React.useState<number>(0);
     const [shedType, setShedType] = React.useState<string>(form.batterySheds);
     const [cageType, setCageType] = React.useState<string>(form.karachiCages);
+
+    const handleSubmit = () => {
+        const data = {
+            name,
+            contact,
+            selected,
+            length,
+            width,
+            chickens,
+            salary,
+            shedType,
+            cageType,
+        };
+
+        redirect(`${language}/calculate?data=${JSON.stringify(data)}`);
+    };
 
     return (
         <div className='p-5'>
@@ -91,7 +108,7 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                 </FormComponent >
             </div>
 
-            <button type='submit' className='w-full bg-[#00AAFF] text-white py-2 rounded-[10px] text-[20px]'>{submit}</button>
+            <button type='submit' onClick={handleSubmit} className='w-full bg-[#00AAFF] text-white py-2 rounded-[10px] text-[20px]'>{submit}</button>
         </div >
     )
 }
