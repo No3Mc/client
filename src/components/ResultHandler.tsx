@@ -2,23 +2,50 @@
 
 import { ResultData } from '@/types/form'
 import React from 'react'
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
 import { redirect } from "next/navigation";
+import FormComponent from './FormComponent';
+
+const BASE_FEED_MACHINE_PRICE = 15000;
+const BASE_MAINTENANCE = 5000;
+const BASE_MONTHLY_LOSS = 2000;
+const BASE_USD = 279.33;
+const BASE_EUR = 287.94;
 
 function ResultHandler({ result, calculateAgain, language }: { result: ResultData, calculateAgain: string, language: string }) {
+    const [currency, setCurrency] = React.useState<string>('PKR');
+    const [feedMachinePrice, setFeedMachinePrice] = React.useState<number>(BASE_FEED_MACHINE_PRICE);
+    const [maintenance, setMaintenance] = React.useState<number>(BASE_MAINTENANCE);
+    const [monthlyLoss, setMonthlyLoss] = React.useState<number>(BASE_MONTHLY_LOSS);
+
+    const handleCurrencyChange = (value: string) => {
+        setCurrency(value);
+        if (value === 'PKR') {
+            setFeedMachinePrice(BASE_FEED_MACHINE_PRICE);
+            setMaintenance(BASE_MAINTENANCE);
+            setMonthlyLoss(BASE_MONTHLY_LOSS);
+        } else if (value === 'USD') {
+            setFeedMachinePrice(BASE_FEED_MACHINE_PRICE / BASE_USD);
+            setMaintenance(BASE_MAINTENANCE / BASE_USD);
+            setMonthlyLoss(BASE_MONTHLY_LOSS / BASE_USD);
+        } else if (value === 'EUR') {
+            setFeedMachinePrice(BASE_FEED_MACHINE_PRICE / BASE_EUR);
+            setMaintenance(BASE_MAINTENANCE / BASE_EUR);
+            setMonthlyLoss(BASE_MONTHLY_LOSS / BASE_EUR);
+        }
+    }
+
     const handleCalculateAgain = () => {
         redirect(`/${language}/`);
     };
 
     return (
-        <div className="p-4 bg-blue-100 min-h-screen flex justify-center items-center flex-col space-y-4">
+        <div className="p-5 bg-[#00AAFF]">
             {/* Currency Selection */}
             <div className="text-sm text-right w-full max-w-md mb-4">
-                <Select>
+                <Select value={currency} onValueChange={(value) => handleCurrencyChange(value)}>
                     <SelectTrigger className="bg-white text-blue-500 px-3 py-2 rounded-lg font-semibold">
-                        <span>{result.currency}</span>
+                        <span>{result.currency} {currency}</span>
                     </SelectTrigger>
                     <SelectContent>
                         <SelectItem value="PKR">PKR</SelectItem>
@@ -29,87 +56,55 @@ function ResultHandler({ result, calculateAgain, language }: { result: ResultDat
             </div>
 
             {/* Data Cards */}
-            <Card className="bg-blue-500 text-white rounded-2xl w-full max-w-md shadow-lg">
-                <CardContent>
-                    <div className="text-center text-xl leading-relaxed font-bold font-sans">
-                        <p>{result.feedMachinePrice}</p>
-                        <p className="text-2xl">15,000.00 PKR</p>
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="bg-blue-500 text-white rounded-2xl w-full max-w-md shadow-lg">
-                <CardContent>
-                    <div className="text-center text-xl leading-relaxed font-bold font-sans">
-                        <p>{result.maintenance}</p>
-                        <p className="text-2xl">5,000.00 PKR</p>
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="bg-blue-500 text-white rounded-2xl w-full max-w-md shadow-lg">
-                <CardContent>
-                    <div className="text-center text-xl leading-relaxed font-bold font-sans">
-                        <p>{result.roi}</p>
-                        <p className="text-2xl">08 {result.months}</p>
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="bg-blue-500 text-white rounded-2xl w-full max-w-md shadow-lg">
-                <CardContent>
-                    <div className="text-center text-xl leading-relaxed font-bold font-sans">
-                        <p>{result.projectCompletionTime}</p>
-                        <p className="text-2xl">02 {result.months}</p>
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="bg-blue-500 text-white rounded-2xl w-full max-w-md shadow-lg">
-                <CardContent>
-                    <div className="text-center text-xl leading-relaxed font-bold font-sans">
-                        <p>{result.dispenseTime}</p>
-                        <p className="text-2xl">1 {result.hour} 25 {result.minutes}</p>
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="bg-blue-500 text-white rounded-2xl w-full max-w-md shadow-lg">
-                <CardContent>
-                    <div className="text-center text-xl leading-relaxed font-bold font-sans">
-                        <p>{result.monthlyLoss}</p>
-                        <p className="text-2xl">2,000.00 PKR</p>
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="bg-blue-500 text-white rounded-2xl w-full max-w-md shadow-lg">
-                <CardContent>
-                    <div className="text-center text-xl leading-relaxed font-bold font-sans">
-                        <p>{result.feedWasted}</p>
-                        <p className="text-2xl">5Kg</p>
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="bg-blue-500 text-white rounded-2xl w-full max-w-md shadow-lg">
-                <CardContent>
-                    <div className="text-center text-xl leading-relaxed font-bold font-sans">
-                        <p>{result.electricityUsage}</p>
-                        <p className="text-2xl">3</p>
-                    </div>
-                </CardContent>
-            </Card>
-
-            {/* Calculate Again Button */}
-            <div className="flex justify-center w-full max-w-md mt-6">
-                <Button
-                    className="bg-white text-blue-500 font-bold px-8 py-3 rounded-lg text-xl"
-                    onClick={handleCalculateAgain}
-                >
-                    {calculateAgain}
-                </Button>
+            <div className='pt-4 pb-8'>
+                <FormComponent title={result.feedMachinePrice} titleBg={'#105A7F'}>
+                    <p className="text-[24px] text-center">{feedMachinePrice.toLocaleString('en-US')} {currency}</p>
+                </FormComponent >
             </div>
+
+            <div className='pt-4 pb-8'>
+                <FormComponent title={result.maintenance} titleBg={'#105A7F'}>
+                    <p className="text-[24px] text-center">{maintenance.toLocaleString('en-US')} {currency}</p>
+                </FormComponent >
+            </div>
+
+            <div className='pt-4 pb-8'>
+                <FormComponent title={result.roi} titleBg={'#105A7F'}>
+                    <p className="text-[24px] text-center">08 {result.months}</p>
+                </FormComponent >
+            </div>
+
+            <div className='pt-4 pb-8'>
+                <FormComponent title={result.projectCompletionTime} titleBg={'#105A7F'}>
+                    <p className="text-[24px] text-center">02 {result.months}</p>
+                </FormComponent >
+            </div>
+
+            <div className='pt-4 pb-8'>
+                <FormComponent title={result.dispenseTime} titleBg={'#105A7F'}>
+                    <p className="text-[24px] text-center">1 {result.hour} 25 {result.minutes}</p>
+                </FormComponent >
+            </div>
+
+            <div className='pt-4 pb-8'>
+                <FormComponent title={result.monthlyLoss} titleBg={'#105A7F'}>
+                    <p className="text-[24px] text-center">{monthlyLoss.toLocaleString('en-US')} {currency}</p>
+                </FormComponent >
+            </div>
+
+            <div className='pt-4 pb-8'>
+                <FormComponent title={result.feedWasted} titleBg={'#105A7F'}>
+                    <p className="text-[24px] text-center">5 Kg</p>
+                </FormComponent >
+            </div>
+
+            <div className='pt-4 pb-8'>
+                <FormComponent title={result.electricityUsage} titleBg={'#105A7F'}>
+                    <p className="text-[24px] text-center">3</p>
+                </FormComponent >
+            </div>
+
+            <button type='submit' onClick={handleCalculateAgain} className='w-full bg-[#40BFFF] text-white py-2 rounded-[10px] text-[20px]'>{calculateAgain}</button>
         </div>
     )
 }

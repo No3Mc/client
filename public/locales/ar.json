@@ -30,7 +30,7 @@
     },
     "results": {
         "title": "النتائج",
-        "currency": "العملة: PKR",
+        "currency": "العملة: ",
         "feedMachinePrice": "السعر التقديري لآلة التغذية",
         "roi": "العائد على الاستثمار (ROI)",
         "dispenseTime": "وقت توزيع العلف",
@@ -43,5 +43,5 @@
         "months": "أشهر",
         "hour": "ساعة",
         "minutes": "دقائق"
-    }    
+    }
 }

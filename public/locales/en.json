@@ -30,7 +30,7 @@
     },
     "results": {
         "title": "Results",
-        "currency": "Currency: PKR",
+        "currency": "Currency: ",
         "feedMachinePrice": "Estimated Price of Feed Machine",
         "roi": "Return on Investment (ROI)",
         "dispenseTime": "Time to Dispense Feed",
