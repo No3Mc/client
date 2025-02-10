@@ -18,3 +18,20 @@ export interface FormData {
     karachiCages: string,
     faisalabadCages: string,
 }
+
+export interface ResultData {
+    title: string,
+    currency: string,
+    feedMachinePrice: string,
+    roi: string,
+    dispenseTime: string,
+    projectCompletionTime: string,
+    maintenance: string,
+    monthlyLoss: string,
+    feedWasted: string,
+    electricityUsage: string,
+    calculateAgain: string,
+    months: string,
+    hour: string,
+    minutes: string,
+}
