@@ -42,9 +42,11 @@ function ResultHandler({ result, calculateAgain, language }: { result: ResultDat
     return (
         <div className="p-5 bg-[#00AAFF]">
             {/* Currency Selection */}
-            <div className="text-sm text-right w-full max-w-md mb-4">
+            <div className='flex justify-between items-center pt-4'>
+                <h2 className='text-[32px] text-white'>Results</h2>
+
                 <Select value={currency} onValueChange={(value) => handleCurrencyChange(value)}>
-                    <SelectTrigger className="bg-white text-blue-500 px-3 py-2 rounded-lg font-semibold">
+                    <SelectTrigger className="text-white border-[1px] border-white rounded-[6px] text-[18px] h-[50px] w-[179px]">
                         <span>{result.currency} {currency}</span>
                     </SelectTrigger>
                     <SelectContent>
@@ -56,7 +58,7 @@ function ResultHandler({ result, calculateAgain, language }: { result: ResultDat
             </div>
 
             {/* Data Cards */}
-            <div className='pt-4 pb-8'>
+            <div className='pt-10 pb-8'>
                 <FormComponent title={result.feedMachinePrice} titleBg={'#105A7F'}>
                     <p className="text-[24px] text-center">{feedMachinePrice.toLocaleString('en-US')} {currency}</p>
                 </FormComponent >
