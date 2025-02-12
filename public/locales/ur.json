@@ -43,5 +43,9 @@
         "months": "ماہ",
         "hour": "گھنٹہ",
         "minutes": "منٹ"
+    },
+    "calculate": {
+        "title": "حساب لگانا",
+        "description": "براہ کرم انتظار کریں"
     }
 }

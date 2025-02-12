@@ -43,5 +43,9 @@
         "months": "أشهر",
         "hour": "ساعة",
         "minutes": "دقائق"
+    },
+    "calculate": {
+        "title": "جاري الحساب",
+        "description": "يرجى الانتظار"
     }
 }

@@ -43,5 +43,9 @@
         "months": "months",
         "hour": "hour",
         "minutes": "minutes"
+    },
+    "calculate": {
+        "title": "Calculating",
+        "description": "Please wait"
     }
 }

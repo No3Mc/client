@@ -1,4 +1,3 @@
-
 import FormHandler from '@/components/FormHandler';
 import { useLocale, useTranslations } from 'next-intl';
 
