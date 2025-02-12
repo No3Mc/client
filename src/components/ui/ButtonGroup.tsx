@@ -20,12 +20,14 @@ function ButtonGroup({ options, defaultValue, onChange, }: ButtonGroupProps) {
         <div className="flex flex-col space-y-2">
             {options.map((option) => (
                 <button
+                    type='button'
                     key={option}
                     onClick={() => handleSelect(option)}
                     className={`w-full px-4 py-2 text-center rounded-[10px] text-[14px] border-[1px] border-black transition ${selected === option
                         ? 'bg-[#00AAFF] text-white'
                         : 'bg-white text-black '
                         }`}
+                    aria-required
                 >
                     {option}
                 </button>

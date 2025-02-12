@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 interface NumberInputProps {
@@ -8,7 +8,6 @@ interface NumberInputProps {
     title: string; // Label for the input field
     placeholder?: string;
     language: string;
-    value?: number; // Optional initial value
     onChange?: (value: number) => void; // Callback to get the updated value
     min?: number; // Minimum value
     max?: number; // Maximum value
@@ -16,25 +15,31 @@ interface NumberInputProps {
     required?: boolean;
 }
 
-function NumberInput({ id, title, language, placeholder, value = 0, onChange, min = 0, max = Infinity, step = 1, required = false }: NumberInputProps) {
-    const [internalValue, setInternalValue] = useState(value);
+function NumberInput({ id, title, language, placeholder, onChange, min = 0, max = Infinity, step = 1, required = false }: NumberInputProps) {
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const handleIncrement = () => {
-        const newValue = Math.min(internalValue + step, max);
-        setInternalValue(newValue);
-        if (onChange) onChange(newValue);
+        if (inputRef.current) {
+            const newValue = Math.min(parseInt(inputRef.current?.value ?? '0') + step, max);
+            inputRef.current.value = newValue.toString();
+            if (onChange) onChange(newValue);
+        }
     };
 
     const handleDecrement = () => {
-        const newValue = Math.max(internalValue - step, min);
-        setInternalValue(newValue);
-        if (onChange) onChange(newValue);
+        if (inputRef.current) {
+            const newValue = Math.max(parseInt(inputRef.current?.value ?? '0') - step, min);
+            inputRef.current.value = newValue.toString();
+            if (onChange) onChange(newValue);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = Math.min(Math.max(Number(e.target.value), min), max);
-        setInternalValue(newValue);
-        if (onChange) onChange(newValue);
+        if (inputRef.current) {
+            const newValue = Math.min(Math.max(Number(e.target.value), min), max);
+            inputRef.current.value = newValue.toString();
+            if (onChange) onChange(newValue);
+        }
     };
 
     return (
@@ -44,15 +49,17 @@ function NumberInput({ id, title, language, placeholder, value = 0, onChange, mi
                 {/* Input Field */}
                 <input
                     type="number"
-                    value={internalValue}
+                    ref={inputRef}
                     onChange={handleChange}
                     className={twMerge(language === 'ar' || language === 'ur' ? 'text-right' : '', "w-full px-4 outline-none text-black")}
                     required={required}
+                    aria-required={required}
                     placeholder={placeholder}
                 />
 
                 {/* Decrement Button */}
                 <button
+                    type='button'
                     onClick={handleDecrement}
                     className="px-4 bg-gray-200 hover:bg-gray-300 border-l-[1px] border-black text-black text-[28px]"
                 >
@@ -61,6 +68,7 @@ function NumberInput({ id, title, language, placeholder, value = 0, onChange, mi
 
                 {/* Increment Button */}
                 <button
+                    type='button'
                     onClick={handleIncrement}
                     className="px-4 bg-gray-200 hover:bg-gray-300 border-l-[1px] border-black text-black text-[28px]"
                 >
