@@ -94,7 +94,7 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                 </div>
 
                 <div className='pt-4 pb-8'>
-                    <FormComponent title={form.levelsQuestion} titleBg={'#00C73C'}>
+                    <FormComponent title={form.rowDimensions} titleBg={'#00C73C'}>
                         <div className='flex flex-col gap-[15px]'>
                             <NumberInput id='length' title={form.lengthPlaceholder} language={language} onChange={(value) => setValue("length", value)} step={1} required />
                             <NumberInput id='width' title={form.widthPlaceholder} language={language} onChange={(value) => setValue("width", value)} step={1} required />

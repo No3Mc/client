@@ -15,7 +15,7 @@ export async function sendSlackMessage(formData: FormDataRequest) {
             { type: "divider" },
             { type: "section", text: { type: "mrkdwn", text: `*Name:* ${formData.name}` } },
             { type: "section", text: { type: "mrkdwn", text: `*Contact:* ${formData.contact}` } },
-            { type: "section", text: { type: "mrkdwn", text: `*Selected Option:* ${formData.selected}` } },
+            { type: "section", text: { type: "mrkdwn", text: `*Levels of chicken cages are in one row:* ${formData.selected}` } },
             { type: "section", text: { type: "mrkdwn", text: `*Dimensions:* ${formData.length} x ${formData.width}` } },
             { type: "section", text: { type: "mrkdwn", text: `*Chickens:* ${formData.chickens}` } },
             { type: "section", text: { type: "mrkdwn", text: `*Salary:* ${formData.salary}` } },
