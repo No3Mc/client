@@ -9,6 +9,7 @@ import ButtonGroup from './ui/ButtonGroup';
 import { redirect } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import CalculatingScreen from './CalculatingScreen';
+import { sendSlackMessage } from '@/lib/actions';
 
 function FormHandler({ form, submit, language }: { form: FormData, submit: string, language: string }) {
     // const { ...name } = useField('text')
@@ -24,8 +25,8 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
     const [isCalculating, setCalculating] = useState(false);
 
     const selected = watch("selected");
-    const shedType = watch("selected");
-    const cageType = watch("selected");
+    const shedType = watch("shedType");
+    const cageType = watch("cageType");
 
     useEffect(() => {
         register("selected");
@@ -37,11 +38,18 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
         register("cageType");
     }, [register]);
 
-    const submitData = (data: any) => {
+    const submitData = async (data: any) => {
         setCalculating(true);
-        setTimeout(() => {
-            redirect(`${language}/calculate?data=${JSON.stringify(data)}`);
-        }, 3000);
+
+        const result = await sendSlackMessage(data);
+        if (result.success) {
+            setTimeout(() => {
+                redirect(`${language}/calculate?data=${JSON.stringify(data)}`);
+            }, 3000);
+        } else {
+            setCalculating(false);
+            redirect(`/${language}/`);
+        }
     };
 
     return (
@@ -64,18 +72,22 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                     <FormComponent title={form.levelsQuestion} titleBg={'#00C73C'}>
                         <div className="flex space-x-4 justify-center items-center">
                             {[1, 2, 3, 4, 5].map((num) => (
-                                <button
-                                    key={num}
-                                    type='button'
-                                    className={`w-12 h-12 rounded-full border-[1px] border-black flex items-center justify-center text-[24px] ${selected === num
-                                        ? 'bg-[#00AAFF] text-white'
-                                        : 'bg-white text-black'
-                                        }`}
-                                    onClick={() => setValue("selected", num)}
-                                    aria-required
-                                >
-                                    {num}
-                                </button>
+                                <label key={num} className="cursor-pointer">
+                                    <input
+                                        type="radio"
+                                        name="selected"
+                                        value={num}
+                                        onChange={() => setValue("selected", num)}
+                                        className="hidden"
+                                        required
+                                    />
+                                    <div
+                                        className={`w-12 h-12 rounded-full border-[1px] border-black flex items-center justify-center text-[24px] ${selected === num ? 'bg-[#00AAFF] text-white' : 'bg-white text-black'
+                                            }`}
+                                    >
+                                        {num}
+                                    </div>
+                                </label>
                             ))}
                         </div>
                     </FormComponent >
@@ -105,6 +117,7 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                 <div className='pt-4 pb-8'>
                     <FormComponent title={form.shedType} titleBg={'#00C73C'}>
                         <ButtonGroup
+                            id='shedType'
                             options={[form.semiControlled, form.batterySheds, form.floor]}
                             defaultValue={shedType} // Set default selection
                             onChange={(value: string) => setValue("shedType", value)} // Handle selection changes
@@ -115,6 +128,7 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                 <div className='pt-4 pb-8'>
                     <FormComponent title={form.cageType} titleBg={'#00C73C'}>
                         <ButtonGroup
+                            id='cageType'
                             options={[form.karachiCages, form.faisalabadCages]}
                             defaultValue={cageType} // Set default selection
                             onChange={(value: string) => setValue("cageType", value)} // Handle selection changes

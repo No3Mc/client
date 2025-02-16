@@ -1,3 +1,15 @@
+export interface FormDataRequest {
+    name: string,
+    contact: string,
+    selected: string,
+    length: string,
+    width: string,
+    chickens: string,
+    salary: string,
+    shedType: string,
+    cageType: string
+}
+
 export interface FormData {
     personalInfo: string,
     namePlaceholder: string,

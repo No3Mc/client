@@ -7,6 +7,11 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    experimental: {
+        serverActions: {
+            allowedOrigins: ['localhost', 'client-lime-psi.vercel.app'],
+        },
+    },
 }
 
 module.exports = withNextIntl(nextConfig);
