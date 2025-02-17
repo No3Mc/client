@@ -25,6 +25,10 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
     const [isCalculating, setCalculating] = useState(false);
 
     const selected = watch("selected");
+    const length = watch("length");
+    const width = watch("width");
+    const chickens = watch("chickens");
+    const salary = watch("salary");
     const shedType = watch("shedType");
     const cageType = watch("cageType");
 
@@ -69,7 +73,7 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                 <hr className='bg-[#D8D8D8] h-[2px] -mx-5' />
 
                 <div className='py-8'>
-                    <FormComponent title={form.levelsQuestion} titleBg={'#00C73C'}>
+                    <FormComponent title={form.levelsQuestion} titleBg={selected ? '#00C73C' : '#E40000'}>
                         <div className="flex space-x-4 justify-center items-center">
                             {[1, 2, 3, 4, 5].map((num) => (
                                 <label key={num} className="cursor-pointer">
@@ -94,7 +98,7 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                 </div>
 
                 <div className='pt-4 pb-8'>
-                    <FormComponent title={form.rowDimensions} titleBg={'#00C73C'}>
+                    <FormComponent title={form.rowDimensions} titleBg={length && width ? '#00C73C' : '#E40000'}>
                         <div className='flex flex-col gap-[15px]'>
                             <NumberInput id='length' title={form.lengthPlaceholder} language={language} onChange={(value) => setValue("length", value)} step={1} required />
                             <NumberInput id='width' title={form.widthPlaceholder} language={language} onChange={(value) => setValue("width", value)} step={1} required />
@@ -103,19 +107,19 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                 </div>
 
                 <div className='pt-4 pb-8'>
-                    <FormComponent title={form.totalChickens} titleBg={'#E40000'}>
+                    <FormComponent title={form.totalChickens} titleBg={chickens ? '#00C73C' : '#E40000'}>
                         <NumberInput id='noOfChickens' title={form.totalChickens} placeholder={form.chickensPlaceholder} language={language} onChange={(value) => setValue("chickens", value)} step={1} required />
                     </FormComponent >
                 </div>
 
                 <div className='pt-4 pb-8'>
-                    <FormComponent title={form.totalChickens} titleBg={'#00C73C'}>
+                    <FormComponent title={form.totalChickens} titleBg={salary ? '#00C73C' : '#E40000'}>
                         <NumberInput id='salaries' title={form.salaries} placeholder={form.salaries} language={language} onChange={(value) => setValue("salary", value)} step={1} required />
                     </FormComponent >
                 </div>
 
                 <div className='pt-4 pb-8'>
-                    <FormComponent title={form.shedType} titleBg={'#00C73C'}>
+                    <FormComponent title={form.shedType} titleBg={shedType ? '#00C73C' : '#E40000'}>
                         <ButtonGroup
                             id='shedType'
                             options={[form.semiControlled, form.batterySheds, form.floor]}
@@ -126,7 +130,7 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                 </div>
 
                 <div className='pt-4 pb-8'>
-                    <FormComponent title={form.cageType} titleBg={'#00C73C'}>
+                    <FormComponent title={form.cageType} titleBg={cageType ? '#00C73C' : '#E40000'}>
                         <ButtonGroup
                             id='cageType'
                             options={[form.karachiCages, form.faisalabadCages]}
