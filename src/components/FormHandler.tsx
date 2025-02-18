@@ -113,7 +113,7 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                 </div>
 
                 <div className='pt-4 pb-8'>
-                    <FormComponent title={form.totalChickens} titleBg={salary ? '#00C73C' : '#E40000'}>
+                    <FormComponent title={form.salaryPlaceholder} titleBg={salary ? '#00C73C' : '#E40000'}>
                         <NumberInput id='salaries' title={form.salaries} placeholder={form.salaries} language={language} onChange={(value) => setValue("salary", value)} step={1} required />
                     </FormComponent >
                 </div>
