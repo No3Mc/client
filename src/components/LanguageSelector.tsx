@@ -31,7 +31,7 @@ function LanguageSelector() {
     };
 
     return (
-        <div className="flex items-center justify-center space-x-4 p-4 rounded-lg border-b-[3px] border-[#00AAFF] text-black w-full">
+        <div className="flex items-center justify-center space-x-4 p-4  border-b-[3px] border-[#00AAFF] text-black w-full">
             {SUPPORTED_LOCALES.map((lng) => (
                 <button
                     key={lng}

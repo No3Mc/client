@@ -16,8 +16,8 @@
         "batterySheds": "بیٹری شیڈز",
         "floor": "فرش",
         "cageType": "آپ کس قسم کے کیجز استعمال کرتے ہیں؟",
-        "karachiCages": "کراچی کیجز",
-        "faisalabadCages": "فیصل آباد کیجز",
+        "aTypeCage": "A Type",
+        "hTypeCage": "H Type",
         "submit": "جمع کروائیں اور حساب لگائیں"
     },
     "help": {
@@ -32,8 +32,8 @@
         "title": "نتائج",
         "currency": "کرنسی: ",
         "feedMachinePrice": "فیڈ مشین کی تخمینی قیمت",
-        "roi": "سرمایہ کاری پر واپسی (ROI)",
-        "dispenseTime": "فیڈ تقسیم کرنے کا وقت",
+        "roi": "فیڈ تقسیم کرنے کی درستگی",
+        "dispenseTime": "فیڈ دینے کا وقت 200 فٹ میں",
         "projectCompletionTime": "منصوبے کی تکمیل کا وقت",
         "maintenance": "ماہانہ تخمینی مرمت کے اخراجات",
         "monthlyLoss": "آپ ہر ماہ کتنی رقم کھو رہے ہیں",
@@ -47,5 +47,9 @@
     "calculate": {
         "title": "حساب لگانا",
         "description": "براہ کرم انتظار کریں"
+    },
+    "contact": {
+        "title": "ہم سے رابطہ کریں",
+        "message": "ہم سے رابطہ کریں"
     }
 }

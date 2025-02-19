@@ -27,8 +27,8 @@ export interface FormData {
     batterySheds: string,
     floor: string,
     cageType: string,
-    karachiCages: string,
-    faisalabadCages: string,
+    aTypeCage: string,
+    hTypeCage: string,
 }
 
 export interface ResultData {

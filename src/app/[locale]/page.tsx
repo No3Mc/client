@@ -22,8 +22,8 @@ export default function HomePage() {
     batterySheds: t('form.batterySheds'),
     floor: t('form.floor'),
     cageType: t('form.cageType'),
-    karachiCages: t('form.karachiCages'),
-    faisalabadCages: t('form.faisalabadCages'),
+    aTypeCage: t('form.aTypeCage'),
+    hTypeCage: t('form.hTypeCage'),
   };
 
   return (

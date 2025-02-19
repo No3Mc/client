@@ -16,8 +16,8 @@
         "batterySheds": "حظائر البطاريات",
         "floor": "الأرضية",
         "cageType": "ما نوع الأقفاص التي تستخدمها؟",
-        "karachiCages": "أقفاص كراتشي",
-        "faisalabadCages": "أقفاص فيصل آباد",
+        "aTypeCage": "A Type",
+        "hTypeCage": "H Type",
         "submit": "إرسال وحساب"
     },
     "help": {
@@ -32,8 +32,8 @@
         "title": "النتائج",
         "currency": "العملة: ",
         "feedMachinePrice": "السعر التقديري لآلة التغذية",
-        "roi": "العائد على الاستثمار (ROI)",
-        "dispenseTime": "وقت توزيع العلف",
+        "roi": "دقة توزيع الأعلاف",
+        "dispenseTime": "وقت توزيع العلف في 200 قدم",
         "projectCompletionTime": "مدة إتمام المشروع",
         "maintenance": "التكاليف التقديرية للصيانة الشهرية",
         "monthlyLoss": "كم من المال تخسر كل شهر",
@@ -47,5 +47,9 @@
     "calculate": {
         "title": "جاري الحساب",
         "description": "يرجى الانتظار"
+    },
+    "contact": {
+        "title": "اتصل بنا",
+        "message": "راسلنا"
     }
 }

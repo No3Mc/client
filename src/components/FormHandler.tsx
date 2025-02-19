@@ -46,6 +46,12 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
         setCalculating(true);
 
         const result = await sendSlackMessage(data);
+        if (data.selected !== 2 || data.shedType !== form.semiControlled || data.cageType !== form.aTypeCage) {
+            setTimeout(() => {
+                redirect(`${language}/contact`);
+            }, 3000);
+            return;
+        }
         if (result.success) {
             setTimeout(() => {
                 redirect(`${language}/calculate?data=${JSON.stringify(data)}`);
@@ -133,7 +139,7 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
                     <FormComponent title={form.cageType} titleBg={cageType ? '#00C73C' : '#E40000'}>
                         <ButtonGroup
                             id='cageType'
-                            options={[form.karachiCages, form.faisalabadCages]}
+                            options={[form.aTypeCage, form.hTypeCage]}
                             defaultValue={cageType} // Set default selection
                             onChange={(value: string) => setValue("cageType", value)} // Handle selection changes
                         />

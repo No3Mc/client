@@ -16,8 +16,8 @@
         "batterySheds": "Battery Sheds",
         "floor": "Floor",
         "cageType": "What type of cages do you use?",
-        "karachiCages": "Karachi Cages",
-        "faisalabadCages": "Faisalabad Cages",
+        "aTypeCage": "A Type",
+        "hTypeCage": "H Type",
         "submit": "Submit and calculate"
     },
     "help": {
@@ -32,8 +32,8 @@
         "title": "Results",
         "currency": "Currency: ",
         "feedMachinePrice": "Estimated Price of Feed Machine",
-        "roi": "Return on Investment (ROI)",
-        "dispenseTime": "Time to Dispense Feed",
+        "roi": "Feed dispensing accuracy",
+        "dispenseTime": "Time to Dispense Feed In 200 ft",
         "projectCompletionTime": "Time to Complete the Project",
         "maintenance": "Estimated Monthly Maintenance Costs",
         "monthlyLoss": "How Much Money You Lose Every Month",
@@ -47,5 +47,9 @@
     "calculate": {
         "title": "Calculating",
         "description": "Please wait"
+    },
+    "contact": {
+        "title": "Contact Us",
+        "message": "Message Us"
     }
 }
