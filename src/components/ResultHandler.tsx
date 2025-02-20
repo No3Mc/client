@@ -18,7 +18,7 @@ function ResultHandler({ result, calculateAgain, language }: { result: ResultDat
     const parsedData = dataParam ? JSON.parse(decodeURIComponent(dataParam)) : null;
 
     const feedSpillagePerMonth = () => {
-        const feedPerDay = 120; // grams per day
+        const feedPerDay = 110; // grams per day
         const spillageRate = 2 / 100; // 2% spillage
         const conversionFactor = parseInt(parsedData.chickens) / 1000; // grams to kg
         const costPerKg = 114; // cost per kg in rps
