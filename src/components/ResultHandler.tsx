@@ -31,7 +31,7 @@ function ResultHandler({ result, calculateAgain, language }: { result: ResultDat
     };
 
     const feedWastedPerMonth = () => {
-        const feedPerDay = 120; // grams per day
+        const feedPerDay = 110; // grams per day
         const spillageRate = 2 / 100; // 2% spillage
         const conversionFactor = parseInt(parsedData.chickens) / 1000; // grams to kg
         const daysInMonth = 30; // number of days
