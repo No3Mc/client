@@ -45,14 +45,19 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
     const submitData = async (data: any) => {
         setCalculating(true);
 
-        const result = await sendSlackMessage(data);
+        window.parent.postMessage({
+            type: 'formSubmitted',
+            payload: JSON.stringify(data)
+        }, '*');
+
+        // const result = await sendSlackMessage(data);
         if (data.selected !== 2 || data.shedType !== form.semiControlled || data.cageType !== form.aTypeCage) {
             setTimeout(() => {
                 redirect(`${language}/contact`);
             }, 3000);
             return;
         }
-        if (result.success) {
+        if (true) {
             setTimeout(() => {
                 redirect(`${language}/calculate?data=${JSON.stringify(data)}`);
             }, 3000);

@@ -21,7 +21,7 @@ function ResultHandler({ result, calculateAgain, language }: { result: ResultDat
         const feedPerDay = 110; // grams per day
         const spillageRate = 2 / 100; // 2% spillage
         const conversionFactor = parseInt(parsedData.chickens) / 1000; // grams to kg
-        const costPerKg = 114; // cost per kg in rps
+        const costPerKg = 122; // cost per kg in rps
         const daysInMonth = 30; // number of days
         const dailySpillageKg = (feedPerDay * spillageRate) * conversionFactor;
         const dailySpillageCost = dailySpillageKg * costPerKg;
