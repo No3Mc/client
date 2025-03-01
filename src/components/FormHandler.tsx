@@ -50,14 +50,14 @@ function FormHandler({ form, submit, language }: { form: FormData, submit: strin
             payload: JSON.stringify(data)
         }, '*');
 
-        // const result = await sendSlackMessage(data);
+        const result = await sendSlackMessage(data);
         if (data.selected !== 2 || data.shedType !== form.semiControlled || data.cageType !== form.aTypeCage) {
             setTimeout(() => {
                 redirect(`${language}/contact`);
             }, 3000);
             return;
         }
-        if (true) {
+        if (result.success) {
             setTimeout(() => {
                 redirect(`${language}/calculate?data=${JSON.stringify(data)}`);
             }, 3000);
